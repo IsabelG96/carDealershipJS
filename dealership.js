@@ -6,5 +6,24 @@ const Dealership = function(name, maxCars) {
 
 }
 
+Dealership.prototype.stockCount = function() {
+    return this.carsInStock.length 
+}
 
-module.exports = Dealership; 
+Dealership.prototype.addCarToStock = function(car){
+   this.carsInStock.push(car);
+}
+
+Dealership.prototype.getAllCarManufacturers = function(){
+    ;
+}
+
+Dealership.prototype.findAllCarsFromManufacturer = function(manufacturer){
+    ;
+}
+
+Dealership.prototype.calculateStockValue = function(manufacturer){
+    ;
+}
+
+module.exports = Dealership;
