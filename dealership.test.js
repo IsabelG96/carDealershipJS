@@ -30,7 +30,13 @@ describe('Dealership', () => {
 
     test('find all cars from a given manufacturer', () => {
         const expected = [toyota];
-        const actual = izzyDealership.getCarsByManufacturer();
+        const actual = izzyDealership.getCarsByManufacturer("Toyota");
+        expect(actual).toEqual(expected);
+    })
+
+    test('calculate value of total stock', () => {
+        const expected = 38000;
+        const actual = izzyDealership.calculateStockValue();
         expect(actual).toEqual(expected);
     })
     

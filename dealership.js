@@ -20,12 +20,14 @@ Dealership.prototype.getAllCarManufacturers = function(){
 }
 
 Dealership.prototype.getCarsByManufacturer = function(manufacturer){
-    filteredArray = 
-    ;
+    filteredArray = this.carsInStock.filter(car => car.manufacturer == manufacturer)
+    return filteredArray;
 }
 
 Dealership.prototype.calculateStockValue = function(){
-    ;
+    totalStockValue = this.carsInStock.reduce((accumulator, car) => {
+        return accumulator + car.price}, 0)
+    return totalStockValue;
 }
 
 
