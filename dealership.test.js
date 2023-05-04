@@ -8,22 +8,35 @@ const izzyDealership = new Dealership("izzyDealership", 100);
 
 describe('Dealership', () => {
 
-    test('can add a car to stock', () => {
+    test('can count cars in stock', () => {
         izzyDealership.addCarToStock(toyota)
         izzyDealership.addCarToStock(tesla)
         const expected = 2;
         const actual = izzyDealership.stockCount();
         expect(actual).toBe(expected);
     })
-    
-    
-    // test('can count number of cars in stock', () => {
-    //         izzyDealership.carsInStock.length = 5
-    //         const expected = 5;
-    //         const actual = izzyDealership.countCars();
-    //         expect(actual).toBe(expected);
-    // })
 
+    test('can add a car to stock', () => {
+        const expected = [toyota, tesla];
+        const actual = izzyDealership.carsInStock;
+        expect(actual).toEqual(expected);
+    })
+
+    test('can return an array with each car manufacturer', () => {
+        const expected = ["Toyota","Tesla"];
+        const actual = izzyDealership.getAllCarManufacturers();
+        expect(actual).toEqual(expected);
+    })
+
+    test('find all cars from a given manufacturer', () => {
+        const expected = [toyota];
+        const actual = izzyDealership.getCarsByManufacturer();
+        expect(actual).toEqual(expected);
+    })
+    
+});
+    
+   
 //     test('can count cars', () => {
 //         const expected = 10500;
 //         const actual = toyota.price;
@@ -36,7 +49,7 @@ describe('Dealership', () => {
 //         expect(actual).toBe(expected);
 // })
 
-});
+
 
 // Dealership.prototype.countCars = function(car){
 //     console.log(`I added ${car} to stock`)

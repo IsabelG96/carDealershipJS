@@ -15,15 +15,19 @@ Dealership.prototype.addCarToStock = function(car){
 }
 
 Dealership.prototype.getAllCarManufacturers = function(){
+    manufacturerArray = this.carsInStock.map(car => car.manufacturer) 
+    return manufacturerArray;    
+}
+
+Dealership.prototype.getCarsByManufacturer = function(manufacturer){
+    filteredArray = 
     ;
 }
 
-Dealership.prototype.findAllCarsFromManufacturer = function(manufacturer){
+Dealership.prototype.calculateStockValue = function(){
     ;
 }
 
-Dealership.prototype.calculateStockValue = function(manufacturer){
-    ;
-}
+
 
 module.exports = Dealership;
